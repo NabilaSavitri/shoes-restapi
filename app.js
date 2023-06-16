@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require("express")
 const app = express();
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 const bodyParser = require('body-parser')
-const cors = require('cors');
+const cors = require('cors')
 
 require('dotenv').config()
 
@@ -12,9 +12,15 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cors())
 
+//import routes
+const authRoutes = require('./routes/auth')
+const sepatuRoutes = require('./routes/sepatu')
+
+app.use('/auth', authRoutes)
+app.use('/sepatu', sepatuRoutes)
 
 app.get("/", (req, res) => {
-  res.send("hayy hyung aigoo");
+  res.send("Nabila Savitri");
 })
 
 mongoose.connect(process.env.DB_CONNECTION, {

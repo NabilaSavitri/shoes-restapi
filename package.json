@@ -2,8 +2,9 @@
   "name": "shoes-restapi",
   "version": "1.0.0",
   "description": "rest api untuk shoes",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "dev" : "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
